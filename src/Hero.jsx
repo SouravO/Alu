@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, use } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "./utils/animations";
 import { useNavigate } from "react-router-dom";
 
@@ -62,9 +62,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <main
+    <div
       ref={heroRef}
-      className="flex flex-col items-center justify-center flex-1 text-center px-4 bg-[#0a0a0a]"
+      className="flex flex-col items-center justify-center flex-1 text-center px-4"
       style={{ minHeight: "90vh" }}
     >
       <h1
@@ -93,7 +93,9 @@ const Hero = () => {
       >
         Explore Our Products
       </button>
-    </main>
+    </div>
   );
 };
+
 export default Hero;
+ 

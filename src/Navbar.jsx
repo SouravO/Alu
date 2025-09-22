@@ -27,35 +27,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 md:px-8 py-4 transition-all duration-300 bg-[#0a0a0a] ${
-        scrolled ? "shadow-lg" : ""
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 md:px-8 py-4 transition-all duration-300 ${
+        scrolled ? "bg-black bg-opacity-70 backdrop-blur-sm shadow-lg" : "bg-transparent"
       }`}
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
-      {/* Logo (Center on mobile, Left on desktop) */}
-      {/* <div className="flex-1 md:flex-none flex justify-start">
-        <Link
-          to="/"
-          className="rounded-full border-2 border-[#6e6e73] p-2 hover:border-white transition"
-        >
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="14" cy="14" r="12" stroke="#6e6e73" strokeWidth="2" />
-            <path
-              d="M14 8v12M8 14h12"
-              stroke="#6e6e73"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        </Link>
-      </div> */}
-
       {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center justify-center flex-1 gap-8 text-[#f8f8f8] text-base">
         {/* home */}
@@ -138,7 +114,7 @@ const Navbar = () => {
       <div className="md:hidden flex items-center">
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="text-[#6e6e73] focus:outline-none transition-colors hover:text-white p-2"
+          className="text-[#f8f8f8] focus:outline-none transition-colors hover:text-white p-2"
           aria-label="Toggle menu"
         >
           {!mobileMenuOpen ? (
@@ -278,5 +254,6 @@ const Navbar = () => {
     </nav>
   );
 };
+
 
 export default Navbar;
