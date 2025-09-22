@@ -21,7 +21,7 @@ const ContactUs = () => {
 
   const [userLocation, setUserLocation] = useState(null);
   const [mapUrl, setMapUrl] = useState(
-    "https://www.google.com/maps/embed?q=Kodampuzha+Kozhikode+Vazhayur+Kerala&zoom=15"
+    "https://www.google.com/maps/embed?q=135/A,+GRACE+HOUSE,+AROOR,+VALLIKKAD,+Kondotty,+Malappuram,+Kerala,+673638&zoom=15"
   );
 
   // Get user's current location
@@ -41,11 +41,11 @@ const ContactUs = () => {
   // }, []);
 
   return (
-    <section className="min-h-screen bg-[#091235] text-white flex flex-col py-16 px-4">
+    <section className="min-h-screen bg-[#0a0a0a]  text-[#f8f8f8] flex flex-col py-16 px-4">
       <div className=" mx-auto w-full">
         <div className="flex items-center mb-8 ">
           <h1
-            className="text-6xl font-bold text-white"
+            className="text-6xl font-bold text-[#f8f8f8]"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             Contact us
@@ -53,7 +53,7 @@ const ContactUs = () => {
         </div>
 
         <p
-          className="text-[#88A9C3] mb-12  text-xl max-w-2xl"
+          className="text-[#6e6e73] mb-12  text-xl max-w-2xl"
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           We are always looking for ways to improve our products and services.
@@ -64,34 +64,36 @@ const ContactUs = () => {
             <div className="flex flex-col items-center md:items-start">
               <div className="flex flex-wrap md:flex-nowrap space-x-3 mb-10">
                 <a
-                  href="mailto:contact@acmeco.ai"
-                  className="text-[#88A9C3] hover:text-[#c1d5e9]"
+                  href="mailto:vpackgroups@gmail.com"
+                  className="text-[#6e6e73] hover:text-[#c1d5e9]"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
-                  contact@acmeco.ai
+                  vpackgroups@gmail.com
                 </a>
-                <span className="text-[#88A9C3]">•</span>
+                <span className="text-[#6e6e73]">•</span>
                 <a
-                  href="tel:+18001231234"
-                  className="text-[#88A9C3] hover:text-[#c1d5e9]"
+                  href="tel:+919020229988"
+                  className="text-[#6e6e73] hover:text-[#c1d5e9]"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
-                  +1 (800) 123 XX21
+                  +91 9020229988
                 </a>
-                <span className="text-[#88A9C3]">•</span>
+                <span className="text-[#6e6e73]">•</span>
                 <a
-                  href="mailto:support@acmeco.ai"
-                  className="text-[#88A9C3] hover:text-[#c1d5e9]"
+                  href="https://goo.gl/maps/135/A,+GRACE+HOUSE,+AROOR,+VALLIKKAD,+Kondotty,+Malappuram,+Kerala,+673638"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#6e6e73] hover:text-[#c1d5e9]"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
-                  support@acmeco.ai
+                  Directions
                 </a>
               </div>
 
               <div className="w-full max-w-md">
                 <div className="relative mb-6 w-full">
                   <label
-                    className="block text-[#c1d5e9] mb-2"
+                    className="block text-[#f8f8f8] mb-2"
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   >
                     Full name
@@ -102,7 +104,7 @@ const ContactUs = () => {
                     onChange={handleChange}
                     type="text"
                     placeholder="John Smith"
-                    className="w-full bg-[#14202E] text-white border border-[#284257] rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#88A9C3]"
+                    className="w-full bg-[#f8f8f8] text-black border border-[#0a0a0a] rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#6e6e73]"
                     required
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   />
@@ -110,7 +112,7 @@ const ContactUs = () => {
 
                 <div className="relative mb-6 w-full">
                   <label
-                    className="block text-[#c1d5e9] mb-2"
+                    className="block text-[#f8f8f8] mb-2"
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   >
                     Email Address
@@ -120,8 +122,8 @@ const ContactUs = () => {
                     value={form.email}
                     onChange={handleChange}
                     type="email"
-                    placeholder="support@acmeco.ai"
-                    className="w-full bg-[#14202E] text-white border border-[#284257] rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#88A9C3]"
+                    placeholder="vpackgroups@gmail.com"
+                    className="w-full bg-[#f8f8f8] text-black border border-[#0a0a0a] rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#6e6e73]"
                     required
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   />
@@ -129,7 +131,7 @@ const ContactUs = () => {
 
                 <div className="relative mb-6 w-full">
                   <label
-                    className="block text-[#c1d5e9] mb-2"
+                    className="block text-[#f8f8f8] mb-2"
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   >
                     Company
@@ -140,14 +142,14 @@ const ContactUs = () => {
                     onChange={handleChange}
                     type="text"
                     placeholder="Acme Co LLC"
-                    className="w-full bg-[#14202E] text-white border border-[#284257] rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#88A9C3]"
+                    className="w-full bg-[#f8f8f8] text-black border border-[#0a0a0a] rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#6e6e73]"
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   />
                 </div>
 
                 <div className="relative mb-6 w-full">
                   <label
-                    className="block text-[#c1d5e9] mb-2"
+                    className="block text-[#f8f8f8] mb-2"
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   >
                     Message
@@ -158,7 +160,7 @@ const ContactUs = () => {
                     onChange={handleChange}
                     rows={5}
                     placeholder="Type your message here"
-                    className="w-full bg-[#14202E] text-white border border-[#284257] rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#88A9C3]"
+                    className="w-full bg-[#f8f8f8] text-black border border-[#0a0a0a] rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#6e6e73]"
                     required
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   />
@@ -167,7 +169,7 @@ const ContactUs = () => {
                 <button
                   onClick={handleSubmit}
                   type="submit"
-                  className="w-full py-3 rounded bg-[#284257] hover:bg-[#88A9C3] hover:text-[#091235] text-white font-medium text-lg transition"
+                  className="w-full py-3 rounded bg-[#f8f8f8] hover:bg-[#6e6e73] hover:text-white text-black font-medium text-lg transition"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
                   Submit
@@ -177,7 +179,7 @@ const ContactUs = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 bg-[#091235] opacity-40"></div>
+            <div className="absolute inset-0  opacity-40"></div>
             <div className="relative z-10 h-full">
               <div className="h-full flex items-center justify-center">
                 <div className="w-full max-w-lg">
@@ -191,14 +193,16 @@ const ContactUs = () => {
                     loading="lazy"
                   ></iframe>
                   <div className="flex justify-center mt-6">
-                    <div className="inline-flex items-center px-4 py-2 bg-[#091235] border border-[#284257] rounded-full shadow-lg">
+                    <div className="inline-flex items-center px-4 py-2 bg-[#6e6e73] border border-[#0a0a0a] rounded-full shadow-lg">
                       <span
                         className="text-[#c1d5e9] mr-2"
                         style={{ fontFamily: "Montserrat, sans-serif" }}
                       >
-                        {userLocation ? "Your current location" : "We are here"}
+                        {userLocation
+                          ? "Your current location"
+                          : "VP GROUP, Kerala"}
                       </span>
-                      <div className="w-3 h-3 bg-[#88A9C3] rounded-full animate-pulse"></div>
+                      <div className="w-3 h-3 bg-[#6e6e73] rounded-full animate-pulse"></div>
                     </div>
                   </div>
                 </div>

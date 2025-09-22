@@ -7,14 +7,15 @@ import Footer from "./Footer";
 import ContactUs from "./ContactUs";
 import OurServices from "./OurServices";
 import Products from "./Products";
+import ModelViewer from "./model/ModelViewer";
 
 // Homepage component that combines multiple sections
 const HomePage = () => (
   <>
     <Hero />
     <AboutUs />
-    <ContactUs />
     <OurServices />
+    <ContactUs />
   </>
 );
 
@@ -31,9 +32,11 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-[#091235] text-white flex flex-col justify-between">
+    <div className="min-h-screen bg-[#0a0a0a] text-[#f8f8f8] flex flex-col justify-between">
       <Navbar />
-      <main>
+      <main className="pt-16">
+        {" "}
+        {/* Added padding-top to account for fixed navbar */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
