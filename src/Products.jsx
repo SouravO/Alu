@@ -10,6 +10,34 @@ import { AnimatedTitle, AnimatedText } from "./components/AnimatedComponents";
 const Products = () => {
   // Product categories data
   const categories = [
+     {
+      id: "food-containers",
+      title: "Food Containers",
+      products: [
+        {
+          id: 4,
+          name: " Food Containers 750ml",
+          description: "Versatile round containers for various food types",
+          image:
+            "https://i0.wp.com/sunecotechventures.com/wp-content/uploads/2023/02/suneco-aluminium-6.jpg?fit=600%2C600&ssl=1?v=1677484036",
+        },
+        {
+          id: 5,
+          name: " Food Containers 450ml",
+          description: "Durable rectangular containers for meals and leftovers",
+          image:
+            "https://tiimg.tistatic.com/fp/1/008/692/aluminium-foil-container-352.jpg",
+        },
+        {
+          id: 6,
+          name: "Food Containers 250ml",
+          description:
+            "Containers with multiple compartments for organized meals",
+          image:
+            "https://5.imimg.com/data5/SELLER/Default/2024/12/473643232/XU/DE/VA/224191725/250ml-aluminium-foil-container.jpg",
+        },
+      ],
+    },
     {
       id: "aluminum-foils",
       title: "Aluminum Foils",
@@ -38,34 +66,7 @@ const Products = () => {
         },
       ],
     },
-    {
-      id: "food-containers",
-      title: "Food Containers",
-      products: [
-        {
-          id: 4,
-          name: "Round Food Containers",
-          description: "Versatile round containers for various food types",
-          image:
-            "https://res.cloudinary.com/daqcima3z/image/upload/v1716493795/round-containers_xm77an.jpg",
-        },
-        {
-          id: 5,
-          name: "Rectangular Food Containers",
-          description: "Durable rectangular containers for meals and leftovers",
-          image:
-            "https://res.cloudinary.com/daqcima3z/image/upload/v1716493795/rectangular-container_uti1fj.jpg",
-        },
-        {
-          id: 6,
-          name: "Compartment Containers",
-          description:
-            "Containers with multiple compartments for organized meals",
-          image:
-            "https://res.cloudinary.com/daqcima3z/image/upload/v1716493795/compartment-containers_c4ve08.jpg",
-        },
-      ],
-    },
+   
   ];
 
   // Ref for header animation
