@@ -6,67 +6,223 @@ import {
   ScrollTrigger,
 } from "./utils/animations";
 import { AnimatedTitle, AnimatedText } from "./components/AnimatedComponents";
+import container1 from "./assets/food-container-250.jpg";
+import container2 from "./assets/food-container-450.jpg";
+import container3 from "./assets/food-container-750.jpg";
+
+// Separate component for product card with its own animations
+const ProductCard = ({ product }) => {
+  const cardRef = useRef(null);
+  const imageContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!imageContainerRef.current || !cardRef.current) return;
+
+    // Create overlay element for reveal effect
+    const overlay = document.createElement("div");
+    overlay.style.position = "absolute";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "#0a0a0a";
+    overlay.style.transformOrigin = "right";
+
+    // Add overlay to image container
+    imageContainerRef.current.style.position = "relative";
+    imageContainerRef.current.style.overflow = "hidden";
+    imageContainerRef.current.appendChild(overlay);
+
+    // Animation for image reveal
+    gsap.to(overlay, {
+      scaleX: 0,
+      duration: 1.2,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
+  return (
+    <div ref={cardRef} className="group cursor-pointer product-item">
+      {/* Product Image with reveal animation */}
+      <div ref={imageContainerRef} className="h-72 mb-4 overflow-hidden">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      </div>
+
+      {/* Product Name */}
+      <h3 className="text-lg font-semibold text-white">{product.name}</h3>
+
+      {/* Product Description */}
+      <p className="text-sm text-[#6e6e73]">{product.description}</p>
+    </div>
+  );
+};
+
+// Call to Action component with its own animations
+const CTA = () => {
+  const ctaRef = useRef(null);
+
+  useEffect(() => {
+    if (!ctaRef.current) return;
+
+    const title = ctaRef.current.querySelector("h2");
+    const desc = ctaRef.current.querySelector("p");
+    const button = ctaRef.current.querySelector("button");
+
+    // Set initial state
+    gsap.set([title, desc, button], { opacity: 0, y: 30 });
+
+    // Create staggered animation
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ctaRef.current,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    tl.to(title, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    })
+      .to(
+        desc,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.6"
+      )
+      .to(
+        button,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.6"
+      );
+
+    return () => {
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
+      tl.kill();
+    };
+  }, []);
+
+  return (
+    <div ref={ctaRef} className="max-w-2xl mx-auto text-center mt-16">
+      <h2
+        className="text-2xl font-bold text-[#f8f8f8] mb-4"
+        style={{ fontFamily: "Playfair Display, serif" }}
+      >
+        Custom Solutions
+      </h2>
+      <p className="text-[#6e6e73] mb-8">
+        Need something specific for your business? We offer custom aluminum
+        packaging solutions tailored to your exact requirements. Contact our
+        team today for a consultation.
+      </p>
+      <a
+        href="mailto:vpackgroups@gmail.com?subject=Custom%20Quote%20Request&body=Hello%20VP%20GROUP,%0A%0AI'm%20interested%20in%20requesting%20a%20custom%20quote%20for%20your%20aluminum%20food%20packaging%20products.%0A%0ACompany:%20%0AContact%20Name:%20%0APhone:%20%0A%0ADetails%20of%20Request:%20%0A%0A%0AThank%20you,%0A"
+        className="bg-[#f8f8f8] hover:bg-[#6e6e73] hover:text-white text-[#6e6e73] font-bold py-3 px-8 rounded-full transition inline-block"
+      >
+        Request Custom Quote
+      </a>
+    </div>
+  );
+};
 
 const Products = () => {
   // Product categories data
   const categories = [
-     {
+    {
       id: "food-containers",
-      title: "Food Containers",
+      title: "Food Containers (250ml)",
       products: [
         {
           id: 4,
-          name: " Food Containers 750ml",
+          name: "Food Containers 250ml",
           description: "Versatile round containers for various food types",
-          image:
-            "https://i0.wp.com/sunecotechventures.com/wp-content/uploads/2023/02/suneco-aluminium-6.jpg?fit=600%2C600&ssl=1?v=1677484036",
+          image: container1,
         },
         {
           id: 5,
-          name: " Food Containers 450ml",
+          name: "Food Containers 250ml",
           description: "Durable rectangular containers for meals and leftovers",
-          image:
-            "https://tiimg.tistatic.com/fp/1/008/692/aluminium-foil-container-352.jpg",
+          image: container1,
         },
         {
           id: 6,
           name: "Food Containers 250ml",
           description:
             "Containers with multiple compartments for organized meals",
-          image:
-            "https://5.imimg.com/data5/SELLER/Default/2024/12/473643232/XU/DE/VA/224191725/250ml-aluminium-foil-container.jpg",
+          image: container1,
         },
       ],
     },
     {
-      id: "aluminum-foils",
-      title: "Aluminum Foils",
+      id: "food-container-500ml",
+      title: "Food container (500ml)",
       products: [
         {
           id: 1,
           name: "Standard Aluminum Foil",
           description: "Everyday kitchen foil for cooking and storage",
-          image:
-            "https://res.cloudinary.com/daqcima3z/image/upload/v1716493795/aluminum-foil-stack_hvlcnp.jpg",
+          image: container2,
         },
         {
           id: 2,
           name: "Heavy-Duty Aluminum Foil",
           description:
             "Extra-thick foil for grilling and high-heat applications",
-          image:
-            "https://res.cloudinary.com/daqcima3z/image/upload/v1716493795/aluminum-foil-roll_svicnp.jpg",
+          image: container2,
         },
         {
           id: 3,
           name: "Pre-Cut Foil Sheets",
           description: "Convenient pre-cut sheets for easy use",
-          image:
-            "https://res.cloudinary.com/daqcima3z/image/upload/v1716493795/aluminum-foil-sheets_gzdk3c.jpg",
+          image: container2,
         },
       ],
     },
-   
+    {
+      id: "food-containers-750ml",
+      title: "Food Containers (750ml)",
+      products: [
+        {
+          id: 7,
+          name: "Food Containers 750ml",
+          description: "Versatile round containers for various food types",
+          image: container3,
+        },
+        {
+          id: 8,
+          name: "Food Containers 450ml",
+          description: "Durable rectangular containers for meals and leftovers",
+          image: container3,
+        },
+        {
+          id: 9,
+          name: "Food Containers 250ml",
+          description:
+            "Containers with multiple compartments for organized meals",
+          image: container3,
+        },
+      ],
+    },
   ];
 
   // Ref for header animation
@@ -225,138 +381,6 @@ const Products = () => {
 
       {/* Call to Action Section */}
       <CTA />
-    </div>
-  );
-};
-
-// Separate component for product card with its own animations
-const ProductCard = ({ product }) => {
-  const cardRef = useRef(null);
-  const imageContainerRef = useRef(null);
-
-  useEffect(() => {
-    if (!imageContainerRef.current || !cardRef.current) return;
-
-    // Create overlay element for reveal effect
-    const overlay = document.createElement("div");
-    overlay.style.position = "absolute";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.backgroundColor = "#0a0a0a";
-    overlay.style.transformOrigin = "right";
-
-    // Add overlay to image container
-    imageContainerRef.current.style.position = "relative";
-    imageContainerRef.current.style.overflow = "hidden";
-    imageContainerRef.current.appendChild(overlay);
-
-    // Animation for image reveal
-    gsap.to(overlay, {
-      scaleX: 0,
-      duration: 1.2,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: cardRef.current,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-    });
-  }, []);
-
-  return (
-    <div ref={cardRef} className="group cursor-pointer product-item">
-      {/* Product Image with reveal animation */}
-      <div ref={imageContainerRef} className="h-72 mb-4 overflow-hidden">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-      </div>
-
-      {/* Product Name */}
-      <h3 className="text-lg font-semibold text-white">{product.name}</h3>
-
-      {/* Product Description */}
-      <p className="text-sm text-[#6e6e73]">{product.description}</p>
-    </div>
-  );
-};
-
-// Call to Action component with its own animations
-const CTA = () => {
-  const ctaRef = useRef(null);
-
-  useEffect(() => {
-    if (!ctaRef.current) return;
-
-    const title = ctaRef.current.querySelector("h2");
-    const desc = ctaRef.current.querySelector("p");
-    const button = ctaRef.current.querySelector("button");
-
-    // Set initial state
-    gsap.set([title, desc, button], { opacity: 0, y: 30 });
-
-    // Create staggered animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ctaRef.current,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    tl.to(title, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out",
-    })
-      .to(
-        desc,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-        },
-        "-=0.6"
-      )
-      .to(
-        button,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-        },
-        "-=0.6"
-      );
-
-    return () => {
-      if (tl.scrollTrigger) tl.scrollTrigger.kill();
-      tl.kill();
-    };
-  }, []);
-
-  return (
-    <div ref={ctaRef} className="max-w-2xl mx-auto text-center mt-16">
-      <h2
-        className="text-2xl font-bold text-[#f8f8f8] mb-4"
-        style={{ fontFamily: "Playfair Display, serif" }}
-      >
-        Custom Solutions
-      </h2>
-      <p className="text-[#6e6e73] mb-8">
-        Need something specific for your business? We offer custom aluminum
-        packaging solutions tailored to your exact requirements. Contact our
-        team today for a consultation.
-      </p>
-      <button className="bg-[#f8f8f8] hover:bg-[#6e6e73] hover:text-white text-[#6e6e73] font-bold py-3 px-8 rounded-full transition">
-        Request Custom Quote
-      </button>
     </div>
   );
 };

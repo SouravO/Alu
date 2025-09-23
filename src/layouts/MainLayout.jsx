@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Silk from "../components/Silk";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 /**
  * Main layout component that applies a consistent Silk background to all pages
@@ -24,11 +25,12 @@ const MainLayout = ({ children }) => {
       {/* Content layer that sits above the background */}
       <div className="relative z-10 min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow pt-16">
-          {children}
-        </main>
+        <main className="flex-grow pt-16">{children}</main>
         <Footer />
       </div>
+
+      {/* WhatsApp floating button */}
+      <WhatsAppButton />
     </div>
   );
 };

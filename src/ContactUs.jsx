@@ -14,8 +14,26 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add form submission logic here
-    alert("Message sent!");
+
+    // Create email body with form data
+    const emailBody = `
+Name: ${form.name}
+Email: ${form.email}
+Company: ${form.company}
+
+Message:
+${form.message}
+    `;
+
+    // Create mailto link with form data
+    const mailtoLink = `mailto:vpackgroups@gmail.com?subject=Website Inquiry from ${
+      form.name
+    }&body=${encodeURIComponent(emailBody)}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
+
+    // Reset form
     setForm({ name: "", email: "", company: "", message: "" });
   };
 

@@ -117,7 +117,7 @@ const Footer = () => (
 
       <div className="border-t border-[#263B80] pt-6 mt-8 flex flex-col md:flex-row justify-between items-center">
         <span className="text-[#6e6e73] text-sm">
-          © 2024 VP GROUP. All rights reserved.
+          © 2025 VP GROUP. All rights reserved.
         </span>
         <div className="flex gap-8 mt-4 md:mt-0">
           <Link
