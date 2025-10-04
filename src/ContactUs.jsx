@@ -39,7 +39,7 @@ ${form.message}
 
   const [userLocation, setUserLocation] = useState(null);
   const [mapUrl, setMapUrl] = useState(
-    "https://www.google.com/maps/embed?q=135/A,+GRACE+HOUSE,+AROOR,+VALLIKKAD,+Kondotty,+Malappuram,+Kerala,+673638&zoom=15"
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3904.123456789!2d75.9211713!3d11.2017512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64556383794ef%3A0xc0a98718167885f3!2sVP%20GROUP!5e0!3m2!1sen!2sin!4v1696262400000!5m2!1sen!2sin"
   );
 
   // Get user's current location
@@ -98,7 +98,7 @@ ${form.message}
                 </a>
                 <span className="text-[#6e6e73]">•</span>
                 <a
-                  href="https://goo.gl/maps/135/A,+GRACE+HOUSE,+AROOR,+VALLIKKAD,+Kondotty,+Malappuram,+Kerala,+673638"
+                  href="https://www.google.com/maps/place/VP+GROUP/@11.2017512,75.9233603,813m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3ba64556383794ef:0xc0a98718167885f3!8m2!3d11.2017512!4d75.9233603!16s%2Fg%2F11y3bstgph"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#6e6e73] hover:text-[#c1d5e9]"

@@ -80,8 +80,13 @@ const services = [
 
 const OurServices = () => {
   return (
-    <section className="min-h-screen bg-[#0a0a0a] text-[#f8f8f8] py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section
+      className="min-h-screen bg-[#0a0a0a] text-[#f8f8f8] py-20 px-4"
+      style={{
+        backgroundColor: "#0a0a0a",
+      }}
+    >
+      <div className="max-w-6xl mx-auto ">
         <h1
           className="text-5xl md:text-6xl font-bold mb-6"
           style={{ fontFamily: "Playfair Display, serif" }}
