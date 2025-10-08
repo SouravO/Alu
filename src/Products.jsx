@@ -339,7 +339,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="bg-[#0a0a0a] py-16 px-6 md:px-10">
+    <div className="bg-[#0a0a0a] py-16 px-6 md:px-10 pt-20">
       {/* Header Section */}
       <div ref={headerRef} className="max-w-4xl mx-auto text-center mb-16">
         <h1

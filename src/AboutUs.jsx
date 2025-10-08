@@ -289,7 +289,7 @@ const AboutUs = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[50vh] bg-[#0a0a0a] flex flex-col md:flex-row items-center justify-center py-16 px-6 gap-10 relative"
+      className="min-h-[50vh] bg-[#0a0a0a] flex flex-col md:flex-row items-center justify-center py-16 px-6 gap-10 relative pt-20"
     >
       <div className="md:w-1/2 w-full">
         <h2

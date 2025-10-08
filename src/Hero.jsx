@@ -65,7 +65,7 @@ const Hero = () => {
     <div
       ref={heroRef}
       className="flex flex-col items-center justify-center flex-1 text-center px-4"
-      style={{ minHeight: "90vh" }}
+      style={{ minHeight: "100vh" }}
     >
       <h1
         className="text-5xl md:text-6xl font-bold mt-16 mb-4 text-[#f8f8f8] title1"

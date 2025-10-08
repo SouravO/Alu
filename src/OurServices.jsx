@@ -81,7 +81,7 @@ const services = [
 const OurServices = () => {
   return (
     <section
-      className="min-h-screen bg-[#0a0a0a] text-[#f8f8f8] py-20 px-4"
+      className="min-h-screen bg-[#0a0a0a] text-[#f8f8f8] py-20 px-4 pt-20"
       style={{
         backgroundColor: "#0a0a0a",
       }}

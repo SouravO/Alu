@@ -31,7 +31,7 @@ const MainLayout = ({ children }) => {
       {/* Content layer */}
       <div className="relative z-10 min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow pt-16">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </div>
 

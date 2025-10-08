@@ -59,8 +59,8 @@ ${form.message}
   // }, []);
 
   return (
-    <section className="min-h-screen bg-[#0a0a0a]  text-[#f8f8f8] flex flex-col py-16 px-4">
-      <div className=" mx-auto w-full">
+    <section className="min-h-screen bg-[#0a0a0a] text-[#f8f8f8] flex flex-col py-16 px-4 pt-20">
+      <div className="mx-auto w-full">
         <div className="flex items-center mb-8 ">
           <h1
             className="text-6xl font-bold text-[#f8f8f8]"
