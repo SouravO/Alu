@@ -6,7 +6,19 @@ const Footer = () => (
     <div className="container mx-auto px-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <div>
-          <h3 className="text-[#f8f8f8] font-semibold mb-4">VP GROUP</h3>
+          <div className="flex items-center mb-4">
+            <img
+              src="/vp-logo.png"
+              alt="VP GROUP Logo"
+              className="h-8 w-auto mr-3"
+            />
+            <h3
+              className="text-[#f8f8f8] font-semibold text-lg"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              VP GROUP
+            </h3>
+          </div>
           <p className="text-[#f8f8f8] text-sm mb-4">
             Premium aluminium food packing containers for modern businesses.
           </p>

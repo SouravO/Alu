@@ -34,8 +34,25 @@ const Navbar = () => {
       }`}
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
+      {/* Logo */}
+      <div className="flex items-center">
+        <Link to="/" className="flex items-center">
+          <img
+            src="/vp-logo.png"
+            alt="VP GROUP Logo"
+            className="h-8 md:h-10 w-auto mr-2 md:mr-3"
+          />
+          <span
+            className="text-[#f8f8f8] text-lg md:text-xl font-bold hidden sm:block"
+            style={{ fontFamily: "Playfair Display, serif" }}
+          >
+            VP GROUP
+          </span>
+        </Link>
+      </div>
+
       {/* Desktop Navigation Links */}
-      <div className="hidden md:flex items-center justify-center flex-1 gap-8 text-[#f8f8f8] text-base">
+      <div className="hidden md:flex items-center justify-center gap-8 text-[#f8f8f8] text-base">
         {/* home */}
         <NavLink
           to="/"
@@ -88,11 +105,13 @@ const Navbar = () => {
         >
           Contact
         </NavLink>
+      </div>
 
-        {/* Quick contact button */}
+      {/* Contact Section */}
+      <div className="hidden md:flex items-center">
         <a
           href="tel:+919020229988"
-          className="bg-[#6e6e73] hover:bg-[#f8f8f8] hover:text-black text-white py-1 px-4 rounded-full transition-all text-sm flex items-center"
+          className="bg-[#6e6e73] hover:bg-[#f8f8f8] hover:text-black text-white py-2 px-4 rounded-full transition-all text-sm flex items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
